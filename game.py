@@ -15,7 +15,7 @@ class Game:
         pygame.display.set_caption("Pygamon")
 
         # charger la carte (tmx)
-        tmx_data = pytmx.util_pygame.load_pygame("Map1.tmx")
+        tmx_data = pytmx.util_pygame.load_pygame("Projet-Trophee-NSI\Map2.tmx")
         map_data = pyscroll.TiledMapData(tmx_data)
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())
         map_layer.zoom = 2
@@ -28,7 +28,7 @@ class Game:
         self.walls =[]
 
         for obj in tmx_data.objects:
-             if obj.type =="collision":
+             if obj.name =="collision":
                   self.walls.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
 
         # dessiner le groupe de calque 
@@ -49,12 +49,10 @@ class Game:
         elif pressed[pygame.K_DOWN]:
             self.player.move_down()
             self.player.change_animation('down')
-        else:
-            if not any(pressed):
-                 # aucun bouton n'est pressé
-                self.player.change_animation('basic')
 
 
+
+        
 
     def run(self):
         #boucle de jeux
