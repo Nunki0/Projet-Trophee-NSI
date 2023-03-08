@@ -17,7 +17,7 @@ class Player(pygame.sprite.Sprite):
             'basic' :self.get_image(0,0),
         }
         self.current_animation = 'left'
-        self.speed=2
+        self.speed = 3
 
     def change_animation(self, name):
         self.current_animation = name

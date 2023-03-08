@@ -11,7 +11,7 @@ class Game:
     def __init__(self):
 
         # fenetre du jeux
-        self.screen =pygame.display.set_mode((800,600))
+        self.screen =pygame.display.set_mode((1000,650))
         pygame.display.set_caption("Pygamon")
 
         # charger la carte (tmx)
@@ -26,10 +26,10 @@ class Game:
 
         # definir une liste pour les collision
         self.walls =[]
-
         for obj in tmx_data.objects:
              if obj.name =="collision":
                   self.walls.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
+        print(self.walls)
 
         # dessiner le groupe de calque 
         self.group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=7)
