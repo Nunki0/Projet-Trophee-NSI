@@ -15,7 +15,7 @@ class Game:
         pygame.display.set_caption("Pygamon")
 
         # charger la carte (tmx)
-        tmx_data = pytmx.util_pygame.load_pygame("Projet-Trophee-NSI\Map2.tmx")
+        tmx_data = pytmx.util_pygame.load_pygame("Map2.tmx")
         map_data = pyscroll.TiledMapData(tmx_data)
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())
         map_layer.zoom = 2
