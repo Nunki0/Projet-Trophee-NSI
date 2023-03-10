@@ -9,6 +9,7 @@ class Player(pygame.sprite.Sprite):
         self.image = self.get_image(0,0)
         self.image.set_colorkey([0,0,0])
         self.rect = self.image.get_rect()
+        print(self.rect)
         self.position =[x,y]
         self.animation_images = {
             'down':self.get_image(0,300),
@@ -19,7 +20,7 @@ class Player(pygame.sprite.Sprite):
         }
         self.current_animation = 'left'
         self.speed = 4
-        self.feet = pygame.Rect(0,0,self.rect.width*0.5,12)
+        self.feet = pygame.Rect(self.rect.width*0.25,0,self.rect.width*0.5,20)
         
 
     def change_animation(self, name):
@@ -46,13 +47,14 @@ class Player(pygame.sprite.Sprite):
         self.image.set_colorkey([0,0,0])
 
     def update_position(self, walls, x=0, y=0):
-        new_rect = pygame.Rect(self.rect[0]+x, self.rect[1]+y, self.rect[2], self.rect[3])
+        new_rect = pygame.Rect(self.feet[0]+x, self.feet[1]+y, self.feet[2], self.feet[3])
         if new_rect.collidelist(walls)==-1:
             self.position[0] += x
             self.position[1] += y
 
     def update(self):
-        self.rect.topleft = self.position
+        #self.rect.topleft = [self.position[0]-self.rect.width*0.5, self.position[1]]
+        self.feet.midbottom = self.rect.midbottom
         self.image = self.animation_images[self.current_animation]
 
 
