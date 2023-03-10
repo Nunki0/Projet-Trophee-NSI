@@ -29,8 +29,8 @@ class Game:
         for obj in tmx_data.objects:
              if obj.name =="collision":
                   self.walls.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
-        print(self.walls)
 
+        
         # dessiner le groupe de calque 
         self.group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=7)
         self.group.add(self.player)
@@ -38,16 +38,16 @@ class Game:
     def handle_input(self):
         pressed = pygame.key.get_pressed()
         if pressed[pygame.K_LEFT]:
-            self.player.move_left()
+            self.player.move_left(self.walls)
             self.player.change_animation('left')
         elif pressed[pygame.K_RIGHT]:
-            self.player.move_right()
+            self.player.move_right(self.walls)
             self.player.change_animation('right')
         elif pressed[pygame.K_UP]:
-            self.player.move_up()
+            self.player.move_up(self.walls)
             self.player.change_animation('up')
         elif pressed[pygame.K_DOWN]:
-            self.player.move_down()
+            self.player.move_down(self.walls)
             self.player.change_animation('down')
 
 
