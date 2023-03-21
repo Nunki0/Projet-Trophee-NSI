@@ -53,7 +53,7 @@ class Player(pygame.sprite.Sprite):
             self.position[1] += y
 
     def update(self):
-        #self.rect.topleft = [self.position[0]-self.rect.width*0.5, self.position[1]]
+        self.rect.topleft = [self.position[0]-self.rect.width*0.5, self.position[1]]
         self.feet.midbottom = self.rect.midbottom
         self.image = self.animation_images[self.current_animation]
 
