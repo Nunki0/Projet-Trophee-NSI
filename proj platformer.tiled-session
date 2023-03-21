@@ -1,0 +1,98 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "C:/Users/Elève/Documents/proj trophé nem/patformer 1.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Tous les Fichiers (*)",
+    "fileStates": {
+        "Background.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/Elève/Documents/proj trophé nem/patformer 1.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 351,
+                "y": 684
+            }
+        },
+        "C:/Users/Elève/Documents/proj trophé nem/platfoermer.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2284.5,
+                "y": 123.5
+            }
+        },
+        "C:/Users/Elève/Documents/proj trophé nem/platformer.tsx": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 259.3333333333333,
+                "y": 1599.3333333333333
+            }
+        },
+        "C:/Users/Elève/Documents/proj trophé nem/tuile platformer.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/Elève/Documents/proj trophé nem/tuile-structures_platformer.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/Elève/Documents/proj trophé nem/tuiles spé.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Map2.tmx": {
+            "scale": 0.7698958333333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 479.2856176430794,
+                "y": 320.82262210796915
+            }
+        },
+        "Map2.tmx#RPG Nature Tileset": {
+            "scaleInDock": 1
+        },
+        "platformer.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tuile platformer.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "C:/Users/Elève/Documents/proj trophé nem/free-swamp-game-tileset-pixel-art/1 Tiles",
+    "map.height": 30,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 200,
+    "openFiles": [
+        "C:/Users/Elève/Documents/proj trophé nem/platfoermer.tmx",
+        "C:/Users/Elève/Documents/proj trophé nem/tuile-structures_platformer.tsx",
+        "C:/Users/Elève/Documents/proj trophé nem/patformer 1.tmx",
+        "C:/Users/Elève/Documents/proj trophé nem/tuiles spé.tsx"
+    ],
+    "project": "proj platformer.tiled-project",
+    "recentFiles": [
+        "C:/Users/Elève/Documents/proj trophé nem/platfoermer.tmx",
+        "C:/Users/Elève/Documents/proj trophé nem/tuile-structures_platformer.tsx",
+        "C:/Users/Elève/Documents/proj trophé nem/tuiles spé.tsx",
+        "C:/Users/Elève/Documents/proj trophé nem/patformer 1.tmx",
+        "C:/Users/Elève/Documents/proj trophé nem/tuile platformer.tsx",
+        "tuile platformer.tsx",
+        "C:/Users/Elève/Documents/proj trophé nem/platformer.tsx",
+        "Background.tsx",
+        "platformer.tsx",
+        "Map2.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.transparentColor": "#ffffff",
+    "tileset.useTransparentColor": true
+}
