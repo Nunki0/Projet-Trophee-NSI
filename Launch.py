@@ -1,5 +1,10 @@
 import pygame
+import Game
+import Player
 
-pygame.init()
-game = Game()
-game.run()
+def global_init():
+    pygame.init()
+    Game.__init__()
+    Player.__init__()
+
+Game.run()
