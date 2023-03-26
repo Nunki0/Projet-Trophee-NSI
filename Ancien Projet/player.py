@@ -9,7 +9,6 @@ class Player(pygame.sprite.Sprite):
         self.image = self.get_image(0,0)
         self.image.set_colorkey([0,0,0])
         self.rect = self.image.get_rect()
-        print(self.rect)
         self.position =[x,y]
         self.animation_images = {
             'down':self.get_image(0,300),

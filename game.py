@@ -3,7 +3,7 @@ import pygame
 
 def __init__():
         # fenetre du jeux
-        screen = pygame.display.set_mode((1000,650))
+        screen = pygame.display.set_mode((1400,690))
         pygame.display.set_caption("Explore")
         background = pygame.image.load("Carte.jpg")
         screen.blit(background, (0,0))
