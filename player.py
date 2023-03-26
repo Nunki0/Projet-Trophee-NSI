@@ -8,6 +8,5 @@ def __init__():
     image.blit(sprite_sheet,(0,0), (0,0,97,97))
     image.set_colorkey([255,255,255])
     rect = image.get_rect()
-    print(rect)
     position =[0,0]
         
