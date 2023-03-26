@@ -1,11 +1,11 @@
 import pygame
 import Game
 import Player
+import Point
 
 def global_init():
     pygame.init()
-    Game.__init__()
-    Player.explorer(0,0)
+    Game.Start()
 
 global_init()
 Game.run()
