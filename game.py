@@ -12,13 +12,23 @@ def Start():
     screen.blit(background, (0,0))
     global player
     player = Player.explorer(0,0)
-    global sprites
-    sprites = pygame.sprite.Group()
-    sprites.add(player)
+    global pt
+    pt = Point.point(150,50)
 
 def sprite_display(sprite):
     return sprite.get_image()
       
+def inputs():
+    pressed = pygame.key.get_pressed()    
+    if pressed[pygame.K_LEFT]:
+        player.move_left()
+    if pressed[pygame.K_RIGHT]:
+        player.move_right()
+    if pressed[pygame.K_UP]:
+        player.move_up()
+    if pressed[pygame.K_DOWN]:
+        player.move_down()
+    
 def run():
     #boucle de jeux
     clock =pygame.time.Clock()
@@ -28,7 +38,9 @@ def run():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-        clock.tick(50)
+        inputs()
         screen.blit(sprite_display(player), (0,0))
+        screen.blit(sprite_display(pt), (0,0))
         pygame.display.update()
+        clock.tick(50)
     pygame.quit()

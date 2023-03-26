@@ -1,5 +1,6 @@
 import pygame
 class Sprites(pygame.sprite.Sprite):
+    speed = 3
     def image(self,x,y,size_x,size_y,image):
         n_image = pygame.Surface([size_x,size_y])
         n_image.blit(image,(0,0), (x,y,size_x,size_y))
