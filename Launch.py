@@ -7,4 +7,5 @@ def global_init():
     Game.__init__()
     Player.__init__()
 
+global_init()
 Game.run()
