@@ -1,11 +1,9 @@
 import pygame
-import Game
-import Player
-import Point
+from game import *
 
 def global_init():
     pygame.init()
-    Game.Start()
+    Start()
 
 global_init()
-Game.run()
+run()

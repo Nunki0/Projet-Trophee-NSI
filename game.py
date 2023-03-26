@@ -1,5 +1,5 @@
 import pygame
-import Player
+import player
 import Point
 
 
@@ -11,7 +11,7 @@ def Start():
     background = pygame.image.load("Carte.jpg")
     screen.blit(background, (0,0))
     global player
-    player = Player.explorer(0,0)
+    player = player.explorer(0,0)
     global pt
     pt = Point.point(150,50)
 
