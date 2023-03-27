@@ -15,9 +15,10 @@ def Start():
     global pt
     pt = point.point(150,50)
 
-def sprite_display(sprite):
+def sprite_display():
     """gestion de l'image des sprites"""
-    return sprite.get_image()
+    screen.blit(player.get_image(), player.get_position())
+    screen.blit(pt.get_image(), (0,0))
       
 def inputs():
     """gestion des entrées clavier"""
@@ -41,8 +42,7 @@ def run():
             if event.type == pygame.QUIT:
                 running = False
         inputs()
-        screen.blit(sprite_display(player), (0,0))
-        screen.blit(sprite_display(pt), (0,0))
+        sprite_display()
         pygame.display.update()
         clock.tick(50)
     pygame.quit()

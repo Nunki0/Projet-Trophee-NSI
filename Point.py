@@ -9,6 +9,6 @@ class point(sprite.Sprites):
         self.rect = self.get_image().get_rect()
 
     def get_image(self):
-        image = self.image(0,0,80,64,self.sprite_sheet)
+        image = self.create_image(0,0,80,64,self.sprite_sheet)
         image.set_colorkey([255,255,255])
         return image

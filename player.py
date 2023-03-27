@@ -10,11 +10,20 @@ class Explorer(sprite.Sprites):
         self.speed = 3
 
     def get_image(self):
-        image = self.image(0,0,225,225,self.sprite_sheet)
+        """renvoie l'image du sprite"""
+        image = self.create_image(0,0,225,225,self.sprite_sheet)
         image.set_colorkey([255,255,255])
         return image
     
+    def goto(self,x,y):
+        self.position = [x,y]
 
+    def move_right(self):
+        self.goto(self.position[0]+self.speed, self.position[1])
+
+    def get_position(self):
+        return tuple(self.position)
+    
         
 
 
