@@ -1,7 +1,7 @@
 import pygame
-import Sprite
+import sprite
 
-class explorer(Sprite.Sprites):
+class Explorer(sprite.Sprites):
     def __init__(self,x,y):
         super().__init__()
         self.sprite_sheet = pygame.image.load("Flèche.png").convert_alpha()
@@ -14,17 +14,7 @@ class explorer(Sprite.Sprites):
         image.set_colorkey([255,255,255])
         return image
     
-    def move_up(self):
-        self.goto(self.position[0], self.position[1]+self.speed)
 
-    def move_down(self):
-        self.goto(self.position[0], self.position[1]-self.speed)
-
-    def move_right(self):
-        self.goto(self.position[0]+self.speed, self.position[1])
-
-    def move_left(self):
-        self.goto(self.position[0]-self.speed, self.position[1])
         
 
 

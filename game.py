@@ -1,24 +1,26 @@
 import pygame
 import player
-import Point
+import point
 
 
 def Start():
-    # fenetre du jeux
+    """initialisation de la fenêtre"""
     global screen
     screen = pygame.display.set_mode((1400,690))
     pygame.display.set_caption("Explore")
     background = pygame.image.load("Carte.jpg")
     screen.blit(background, (0,0))
     global player
-    player = player.explorer(0,0)
+    player = player.Explorer(0,0)
     global pt
-    pt = Point.point(150,50)
+    pt = point.point(150,50)
 
 def sprite_display(sprite):
+    """gestion de l'image des sprites"""
     return sprite.get_image()
       
 def inputs():
+    """gestion des entrées clavier"""
     pressed = pygame.key.get_pressed()    
     if pressed[pygame.K_LEFT]:
         player.move_left()
@@ -30,7 +32,7 @@ def inputs():
         player.move_down()
     
 def run():
-    #boucle de jeux
+    """boucle du jeu"""
     clock =pygame.time.Clock()
     running =True
 

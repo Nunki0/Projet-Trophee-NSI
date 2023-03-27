@@ -1,7 +1,7 @@
 import pygame
-import Sprite
+import sprite
 
-class point(Sprite.Sprites):
+class point(sprite.Sprites):
     def __init__(self,x,y):
         super().__init__()
         self.sprite_sheet = pygame.image.load("Point_noir.png").convert_alpha()

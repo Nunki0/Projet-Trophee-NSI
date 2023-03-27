@@ -3,7 +3,7 @@ from game import *
 
 def global_init():
     pygame.init()
-    Start()
+    Start() #initialisation fenêtre
 
 global_init()
-run()
+run() #boucle de jeu

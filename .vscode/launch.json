@@ -9,7 +9,7 @@
             "name": "Python: Module",
             "type": "python",
             "request": "launch",
-            "module": "Launch",
+            "module": "launch",
             "justMyCode": true
         }
     ]
