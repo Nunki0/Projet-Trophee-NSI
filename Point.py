@@ -12,3 +12,5 @@ class point(sprite.Sprites):
         image = self.create_image(0,0,80,64,self.sprite_sheet)
         image.set_colorkey([255,255,255])
         return image
+    def get_position(self):
+        return tuple(self.position)

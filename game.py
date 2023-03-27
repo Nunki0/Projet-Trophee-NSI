@@ -13,12 +13,23 @@ def Start():
     global player
     player = player.Explorer(0,0)
     global pt
-    pt = point.point(150,50)
+    pt = point.point(150,200)
+    locations = {
+        "Europe": {
+                "France":["Paris",402,150]
+        },
+        "Asie": {
+                "Japon":["Tokyo",960,180]
+        },
+        "Afrique": {
+                "Tchad":["N'Djamena",650,700]
+        }
+    }
 
 def sprite_display():
     """gestion de l'image des sprites"""
     screen.blit(player.get_image(), player.get_position())
-    screen.blit(pt.get_image(), (0,0))
+    screen.blit(pt.get_image(), pt.get_position())
       
 def inputs():
     """gestion des entrées clavier"""
