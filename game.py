@@ -5,15 +5,13 @@ import point
 
 def Start():
     """initialisation de la fenêtre"""
-    global screen
+    global screen, player, pt, locations
     screen = pygame.display.set_mode((1400,690))
     pygame.display.set_caption("Explore")
     background = pygame.image.load("Carte.jpg")
     screen.blit(background, (0,0))
-    global player
     player = player.Explorer(0,0)
-    global pt
-    pt = point.point(150,200)
+    pt = point.Point(150,200)
     locations = {
         "Europe": {
                 "France":["Paris",402,150]
@@ -25,6 +23,7 @@ def Start():
                 "Tchad":["N'Djamena",650,700]
         }
     }
+    mark_country("France")
 
 def sprite_display():
     """gestion de l'image des sprites"""
@@ -42,7 +41,19 @@ def inputs():
         player.move_up()
     if pressed[pygame.K_DOWN]:
         player.move_down()
-    
+
+
+def mark_country(country):
+    """affiche un point sur le pays indiqué"""
+    for i in locations:
+        for k in locations[i]:
+            if country == k:
+                npoint = point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
+            
+
+
+
+
 def run():
     """boucle du jeu"""
     clock =pygame.time.Clock()
