@@ -6,14 +6,14 @@ import point
 def Start():
     """initialisation de la fenêtre"""
     global sprites, locations, player
-    load_map("Afrique")
+    load_map("Europe")
     sprites = pygame.sprite.Group()
     player = player.Explorer(0,0)
     sprites.add(player)
     locations = {
         "Europe": {
-                "France":["Paris",695,185],
-                "Albanie":["Tirana",715,210],
+                "France":["Paris",515,405],
+                "Albanie":["Tirana",733,520],
                 "Allemagne":["Berlin",730,185],
                 "Autriche":["Vienne",715,200],
                 "Belgique":["Bruxelles",705,175],
@@ -30,10 +30,11 @@ def Start():
                 "Tchad":["N'Djamena",750,340]
         }
     }
+    mark_zone("Europe")
 
 def load_map(zone):
     global screen
-    screen_x = 1400
+    screen_x = 1360
     screen_y = 690
     zones = {
         "Europe":[3.4,540,60],
