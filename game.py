@@ -5,11 +5,19 @@ import point
 
 def Start():
     """initialisation de la fenêtre"""
+    screen_x = 1400
+    screen_y = 690
+    zoom = 1.5
+    surf_x = round(screen_x/zoom)
+    surf_y = round(screen_y/zoom)
     global screen, sprites, locations, player
-    screen = pygame.display.set_mode((1400,690))
+    screen = pygame.display.set_mode((screen_x,screen_y))
     pygame.display.set_caption("Explore")
     background = pygame.image.load("Carte.jpg")
-    screen.blit(background, (0,0))
+    surf = pygame.Surface([surf_x,surf_y])
+    surf.blit(background,(0,0))
+    surf2=pygame.transform.scale_by(surf,zoom)
+    screen.blit(surf2, (0,0))
     sprites = pygame.sprite.Group()
     player = player.Explorer(0,0)
     sprites.add(player)
