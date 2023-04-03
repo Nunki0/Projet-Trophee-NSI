@@ -12,8 +12,8 @@ def Start():
     sprites.add(player)
     locations = {
         "Europe": {
-                "France":["Paris",515,405],
-                "Albanie":["Tirana",733,520],
+                "France":["Paris",470,415],
+                "Albanie":["Tirana",780,538],
                 "Allemagne":["Berlin",730,185],
                 "Autriche":["Vienne",715,200],
                 "Belgique":["Bruxelles",705,175],
@@ -37,7 +37,7 @@ def load_map(zone):
     screen_x = 1360
     screen_y = 690
     zones = {
-        "Europe":[3.4,540,60],
+        "Europe":[1.5,1800,210], #Carte.jpg: [3.4,540,60]
         "Asie":[2.3,750,60],
         "Afrique":[2.1,400,215]
     }
@@ -46,7 +46,7 @@ def load_map(zone):
     surf_y = round(screen_y/zoom)
     screen = pygame.display.set_mode((screen_x,screen_y))
     pygame.display.set_caption("Explore")
-    background = pygame.image.load("Carte.jpg")
+    background = pygame.image.load("carte.png")
     surf = pygame.Surface([surf_x,surf_y])
     surf.blit(background,(0,0),(zones[zone][1],zones[zone][2],surf_x,surf_y))
     surf2=pygame.transform.scale_by(surf,zoom)
@@ -100,6 +100,6 @@ def run():
                 running = False
         inputs()
         sprites.draw(screen)
-        pygame.display.update()
+        pygame.display.flip()
         clock.tick(50)
     pygame.quit()
