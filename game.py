@@ -1,6 +1,6 @@
 import pygame
 import player
-import point
+import Point
 
 
 def Start():
