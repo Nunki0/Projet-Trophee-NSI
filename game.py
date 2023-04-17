@@ -105,14 +105,14 @@ def mark_country(country):
     for i in locations:
         for k in locations[i]:
             if country == k:
-                npoint = point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
+                npoint = Point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
                 sprites.add(npoint)
 
 def mark_all():
     """affiche tous les pays"""
     for i in locations:
         for k in locations[i]:
-            npoint = point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
+            npoint = Point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
             sprites.add(npoint)
 
 def mark_zone(zone):
@@ -120,7 +120,7 @@ def mark_zone(zone):
     for i in locations:
         if i == zone:
             for k in locations[i]:
-                npoint = point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
+                npoint = Point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
                 sprites.add(npoint)
                 
 def run():
