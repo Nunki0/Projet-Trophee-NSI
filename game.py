@@ -1,6 +1,6 @@
 import pygame
 import player
-import Point
+import point
 
 
 def Start():
@@ -14,14 +14,15 @@ def Start():
         "Europe": {
                 "France":["Paris",470,415],
                 "Albanie":["Tirana",780,538],
-                "Allemagne":["Berlin",730,185],
+                "Allemagne":["Berlin",662,336],
                 "Autriche":["Vienne",715,200],
                 "Belgique":["Bruxelles",705,175],
                 "Biélorussie":["Minsk",740,170],
                 "Bosnie-Herzégovine":["Sarajevo",720,210],
                 "Bulgarie":["Sofia",730,215],
                 "Croatie":["Zagreb",720,200],
-                "Danemark":["Copenhague",715,170]
+                "Danemark":["Copenhague",715,170],
+                "Pologne":["Varsovie",795,351]
         },
         "Asie": {
                 "Japon":["Tokyo",1200,240]
@@ -38,7 +39,7 @@ def load_map(zone):
     screen_y = 690
     zones = {
         "Europe":[1.5,1800,210], #Carte.jpg: [3.4,540,60]
-        "Asie":[2.3,750,60],
+        "Asie":[0.8,2400,200],
         "Afrique":[2.1,400,215]
     }
     zoom = zones[zone][0]
@@ -98,8 +99,11 @@ def run():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            if event.type == pygame.MOUSEBUTTONDOWN: # lorsque l'on clique
+                print(pygame.mouse.get_pos())        # affiche les coordonnées pour avoir plus facilement les coordonnées des capitales à entrer dans le dict
         inputs()
         sprites.draw(screen)
         pygame.display.flip()
+
         clock.tick(50)
     pygame.quit()
