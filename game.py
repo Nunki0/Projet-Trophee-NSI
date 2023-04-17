@@ -12,51 +12,51 @@ def Start(zone):
     sprites.add(player)
     locations = {
         "Europe": {
-                "Albanie":["Tirana",772,524],
+                "Albanie":["Tirana",772,524], #fait
                 "Allemagne":["Berlin",662,336],
-                "Autriche":["Vienne",708,384],
+                "Autriche":["Vienne",708,384],#fait
                 "Belgique":["Bruxelles",509,367],
                 "Biélorussie":["Minsk",740,170],
-                "Bosnie-Herzégovine":["Sarajevo",736,464],
-                "Bulgarie":["Sofia",820,492],
+                "Bosnie-Herzégovine":["Sarajevo",736,464],#fait
+                "Bulgarie":["Sofia",820,492],#fait
                 "Croatie":["Zagreb",710,432],
-                "Chypre":["Nicosie",1004,646],
+                "Chypre":["Nicosie",1004,646],#fait
                 "Croatie":["Zagreb",714,452],
-                "Danemark":["Copenhague",636,245],
-                "Espagne":["Madrid",387,539],
-                "Estonie":["Tallinn",818,170],
-                "Finlande":["Helsinki",825,147],
-                "France":["Paris",487,378],
-                "Grèce":["Athènes",834,584],
-                "Hongrie":["Budapest",758,401],
+                "Danemark":["Copenhague",636,245],#fait
+                "Espagne":["Madrid",387,539],#fait
+                "Estonie":["Tallinn",818,170],#fait
+                "Finlande":["Helsinki",825,147],#fait
+                "France":["Paris",487,378],#fait
+                "Grèce":["Athènes",834,584],#fait
+                "Hongrie":["Budapest",758,401],#fait
                 "Irlande":["Dublin",316,324],
-                "Islande":["Reykjavik",179,81],
+                "Islande":["Reykjavik",179,81],#fait
                 "Italie":["Rome",648,516],
-                "Kosovo":["Pristina",784,495],
-                "Lettonie":["Riga",812,215],
+                "Kosovo":["Pristina",784,495],#fait
+                "Lettonie":["Riga",812,215],#fait
                 "Liechtenstein":["Vaduz",709,416],
                 "Lituanie":["Vilnius",0,0],
-                "Luxembourg":["Luxembourg",548,354],
+                "Luxembourg":["Luxembourg",548,354],#fait
                 "Macédoine du Nord":["Skopje",0,0],
                 "Malte":["La Valette",0,0],
                 "Moldavie":["Chişinău",0,0],
                 "Monaco":["Monaco",0,0],
-                "Monténégro":["Podgorica",759,494],
+                "Monténégro":["Podgorica",759,494],#fait
                 "Norvège":["Oslo",0,0],
-                "Pays-Bas":["Amsterdam",531,295],
+                "Pays-Bas":["Amsterdam",531,295],#fait
                 "Pologne":["Varsovie",795,351],
                 "Portugal":["Lisbonne",0,0],
                 "Roumanie":["Bucarest",0,0],
                 "Royaume-Uni":["Londres",0,0],
                 "Russie":["Moscou",0,0],
-                "Saint-Marin":["Saint-Marin",648,473],
+                "Saint-Marin":["Saint-Marin",648,473],#fait
                 "Serbie":["Belgrade",0,0],
-                "Slovaquie":["Bratislava",720,383],
+                "Slovaquie":["Bratislava",720,383],#fait
                 "Slovénie":["Ljubljana",0,0],
-                "Suède":["Stockholm",718,173],
-                "Suisse":["Berne",565,408],
-                "Tchéquie":["Prague",678,350],
-                "Ukraine":["Kiev",926,336]
+                "Suède":["Stockholm",718,173],#fait
+                "Suisse":["Berne",565,408],#fait
+                "Tchéquie":["Prague",678,350],#fait
+                "Ukraine":["Kiev",926,336]#fait
         },
         "Asie": {
                 "Japon":["Tokyo",1200,240]
