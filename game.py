@@ -15,13 +15,13 @@ def Start():
                 "France":["Paris",470,415],
                 "Albanie":["Tirana",780,538],
                 "Allemagne":["Berlin",662,336],
-                "Autriche":["Vienne",715,200],
-                "Belgique":["Bruxelles",705,175],
+                "Autriche":["Vienne",706,413],
+                "Belgique":["Bruxelles",509,367],
                 "Biélorussie":["Minsk",740,170],
-                "Bosnie-Herzégovine":["Sarajevo",720,210],
-                "Bulgarie":["Sofia",730,215],
-                "Croatie":["Zagreb",720,200],
-                "Danemark":["Copenhague",715,170],
+                "Bosnie-Herzégovine":["Sarajevo",745,484],
+                "Bulgarie":["Sofia",836,506],
+                "Croatie":["Zagreb",710,453],
+                "Danemark":["Copenhague",629,285],
                 "Pologne":["Varsovie",795,351]
         },
         "Asie": {
@@ -100,7 +100,7 @@ def run():
             if event.type == pygame.QUIT:
                 running = False
             if event.type == pygame.MOUSEBUTTONDOWN: # lorsque l'on clique
-                print(pygame.mouse.get_pos())        # affiche les coordonnées pour avoir plus facilement les coordonnées des capitales à entrer dans le dict
+                print(pygame.mouse.get_pos())        # affiche les coordonnées du pointeur de souris pour avoir plus facilement les coordonnées des capitales à entrer dans le dict
         inputs()
         sprites.draw(screen)
         pygame.display.flip()
