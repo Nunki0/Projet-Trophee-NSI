@@ -1,8 +1,8 @@
 import pygame
-import Sprite
+import sprite
 import time
 
-class Explorer(Sprite.Sprites):
+class Explorer(sprite.Sprites):
     def __init__(self,x,y):
         super().__init__()
         self.sprite_sheet = pygame.image.load("player.png").convert_alpha()

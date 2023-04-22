@@ -16,7 +16,7 @@ def Start(zone):
                 "Allemagne":["Berlin",670,313],#fait
                 "Autriche":["Vienne",708,384],#fait
                 "Belgique":["Bruxelles",530,334],#fait
-                "Biélorussie":["Minsk",870,270],#fait
+                "Biélorussie":["Minsk",882,287],#fait
                 "Bosnie-Herzégovine":["Sarajevo",736,464],#fait
                 "Bulgarie":["Sofia",820,492],#fait
                 "Chypre":["Nicosie",1004,646],#fait
@@ -33,25 +33,25 @@ def Start(zone):
                 "Italie":["Rome",662,515],#fait
                 "Kosovo":["Pristina",784,495],#fait
                 "Lettonie":["Riga",812,215],#fait
-                "Liechtenstein":["Vaduz",709,416],
+                "Liechtenstein":["Vaduz",605,406],
                 "Lituanie":["Vilnius",830,255],#fait
                 "Luxembourg":["Luxembourg",548,354],#fait
-                "Macédoine du Nord":["Skopje",780,500],
-                "Malte":["La Valette",0,0],
-                "Moldavie":["Chişinău",0,0],
-                "Monaco":["Monaco",0,0],
+                "Macédoine du Nord":["Skopje",798,511],
+                "Malte":["La Valette",683,632],
+                "Moldavie":["Chişinău",904,405],
+                "Monaco":["Monaco",563,474],
                 "Monténégro":["Podgorica",759,494],#fait
-                "Norvège":["Oslo",0,0],
+                "Norvège":["Oslo",618,161],
                 "Pays-Bas":["Amsterdam",531,295],#fait
                 "Pologne":["Varsovie",795,351],
-                "Portugal":["Lisbonne",0,0],
-                "Roumanie":["Bucarest",0,0],
-                "Royaume-Uni":["Londres",0,0],
-                "Russie":["Moscou",0,0],
+                "Portugal":["Lisbonne",294,573],
+                "Roumanie":["Bucarest",863,450],
+                "Royaume-Uni":["Londres",450,318],
+                "Russie":["Moscou",1005,215],
                 "Saint-Marin":["Saint-Marin",648,473],#fait
-                "Serbie":["Belgrade",0,0],
+                "Serbie":["Belgrade",776,448],
                 "Slovaquie":["Bratislava",720,383],#fait
-                "Slovénie":["Ljubljana",0,0],
+                "Slovénie":["Ljubljana",680,427],
                 "Suède":["Stockholm",718,173],#fait
                 "Suisse":["Berne",565,408],#fait
                 "Tchéquie":["Prague",678,350],#fait
