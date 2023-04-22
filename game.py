@@ -1,6 +1,6 @@
 import pygame
 import player
-import point
+import Point
 
 
 def Start(zone):
@@ -13,15 +13,14 @@ def Start(zone):
     locations = {
         "Europe": {
                 "Albanie":["Tirana",772,524], #fait
-                "Allemagne":["Berlin",662,336],
+                "Allemagne":["Berlin",670,313],#fait
                 "Autriche":["Vienne",708,384],#fait
-                "Belgique":["Bruxelles",509,367],
-                "Biélorussie":["Minsk",740,170],
+                "Belgique":["Bruxelles",530,334],#fait
+                "Biélorussie":["Minsk",870,270],#fait
                 "Bosnie-Herzégovine":["Sarajevo",736,464],#fait
                 "Bulgarie":["Sofia",820,492],#fait
-                "Croatie":["Zagreb",710,432],
                 "Chypre":["Nicosie",1004,646],#fait
-                "Croatie":["Zagreb",714,452],
+                "Croatie":["Zagreb",714,430],#fait
                 "Danemark":["Copenhague",636,245],#fait
                 "Espagne":["Madrid",387,539],#fait
                 "Estonie":["Tallinn",818,170],#fait
@@ -29,15 +28,15 @@ def Start(zone):
                 "France":["Paris",487,378],#fait
                 "Grèce":["Athènes",834,584],#fait
                 "Hongrie":["Budapest",758,401],#fait
-                "Irlande":["Dublin",316,324],
+                "Irlande":["Dublin",350,290],#fait
                 "Islande":["Reykjavik",179,81],#fait
-                "Italie":["Rome",648,516],
+                "Italie":["Rome",662,515],#fait
                 "Kosovo":["Pristina",784,495],#fait
                 "Lettonie":["Riga",812,215],#fait
                 "Liechtenstein":["Vaduz",709,416],
-                "Lituanie":["Vilnius",0,0],
+                "Lituanie":["Vilnius",830,255],#fait
                 "Luxembourg":["Luxembourg",548,354],#fait
-                "Macédoine du Nord":["Skopje",0,0],
+                "Macédoine du Nord":["Skopje",780,500],
                 "Malte":["La Valette",0,0],
                 "Moldavie":["Chişinău",0,0],
                 "Monaco":["Monaco",0,0],
@@ -205,14 +204,14 @@ def mark_country(country):
     for i in locations:
         for k in locations[i]:
             if country == k:
-                npoint = point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
+                npoint = Point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
                 sprites.add(npoint)
 
 def mark_all():
     """affiche tous les pays"""
     for i in locations:
         for k in locations[i]:
-            npoint = point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
+            npoint = Point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
             sprites.add(npoint)
 
 def mark_zone(zone):
@@ -220,13 +219,13 @@ def mark_zone(zone):
     for i in locations:
         if i == zone:
             for k in locations[i]:
-                npoint = point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
+                npoint = Point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
                 sprites.add(npoint)
                 
 def run():
     """boucle du jeu"""
     clock =pygame.time.Clock()
-    running =True
+    running =True 
 
     while running:
         for event in pygame.event.get():
