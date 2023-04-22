@@ -3,7 +3,7 @@ from game import *
 
 def global_init():
     pygame.init()
-    Start("Europe") #initialisation fenêtre
+    Start("Asie") #initialisation fenêtre
 
 global_init()
 run() #boucle de jeu

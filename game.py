@@ -12,50 +12,50 @@ def Start(zone):
     sprites.add(player)
     locations = {
         "Europe": {
-                "Albanie":["Tirana",772,524], #fait
-                "Allemagne":["Berlin",670,313],#fait
-                "Autriche":["Vienne",708,384],#fait
-                "Belgique":["Bruxelles",530,334],#fait
-                "Biélorussie":["Minsk",882,287],#fait
-                "Bosnie-Herzégovine":["Sarajevo",736,464],#fait
-                "Bulgarie":["Sofia",820,492],#fait
-                "Chypre":["Nicosie",1004,646],#fait
-                "Croatie":["Zagreb",714,430],#fait
-                "Danemark":["Copenhague",636,245],#fait
-                "Espagne":["Madrid",387,539],#fait
-                "Estonie":["Tallinn",818,170],#fait
-                "Finlande":["Helsinki",825,147],#fait
-                "France":["Paris",487,378],#fait
-                "Grèce":["Athènes",834,584],#fait
-                "Hongrie":["Budapest",758,401],#fait
-                "Irlande":["Dublin",350,290],#fait
-                "Islande":["Reykjavik",179,81],#fait
-                "Italie":["Rome",662,515],#fait
-                "Kosovo":["Pristina",784,495],#fait
-                "Lettonie":["Riga",812,215],#fait
+                "Albanie":["Tirana",772,524], 
+                "Allemagne":["Berlin",670,313],
+                "Autriche":["Vienne",708,384],
+                "Belgique":["Bruxelles",530,334],
+                "Biélorussie":["Minsk",882,287],
+                "Bosnie-Herzégovine":["Sarajevo",736,464],
+                "Bulgarie":["Sofia",820,492],
+                "Chypre":["Nicosie",1004,646],
+                "Croatie":["Zagreb",714,430],
+                "Danemark":["Copenhague",636,245],
+                "Espagne":["Madrid",387,539],
+                "Estonie":["Tallinn",818,170],
+                "Finlande":["Helsinki",825,147],
+                "France":["Paris",487,378],
+                "Grèce":["Athènes",834,584],
+                "Hongrie":["Budapest",758,401],
+                "Irlande":["Dublin",350,290],
+                "Islande":["Reykjavik",179,81],
+                "Italie":["Rome",662,515],
+                "Kosovo":["Pristina",784,495],
+                "Lettonie":["Riga",812,215],
                 "Liechtenstein":["Vaduz",605,406],
-                "Lituanie":["Vilnius",830,255],#fait
-                "Luxembourg":["Luxembourg",548,354],#fait
+                "Lituanie":["Vilnius",830,255],
+                "Luxembourg":["Luxembourg",548,354],
                 "Macédoine du Nord":["Skopje",798,511],
                 "Malte":["La Valette",683,632],
                 "Moldavie":["Chişinău",904,405],
                 "Monaco":["Monaco",563,474],
-                "Monténégro":["Podgorica",759,494],#fait
+                "Monténégro":["Podgorica",759,494],
                 "Norvège":["Oslo",618,161],
-                "Pays-Bas":["Amsterdam",531,295],#fait
+                "Pays-Bas":["Amsterdam",531,295],
                 "Pologne":["Varsovie",795,351],
                 "Portugal":["Lisbonne",294,573],
                 "Roumanie":["Bucarest",863,450],
                 "Royaume-Uni":["Londres",450,318],
                 "Russie":["Moscou",1005,215],
-                "Saint-Marin":["Saint-Marin",648,473],#fait
+                "Saint-Marin":["Saint-Marin",648,473],
                 "Serbie":["Belgrade",776,448],
-                "Slovaquie":["Bratislava",720,383],#fait
+                "Slovaquie":["Bratislava",720,383],
                 "Slovénie":["Ljubljana",680,427],
-                "Suède":["Stockholm",718,173],#fait
-                "Suisse":["Berne",565,408],#fait
-                "Tchéquie":["Prague",678,350],#fait
-                "Ukraine":["Kiev",926,336]#fait
+                "Suède":["Stockholm",718,173],
+                "Suisse":["Berne",565,408],
+                "Tchéquie":["Prague",678,350],
+                "Ukraine":["Kiev",926,336]
         },
         "Asie": {
                 "Afghanistan":["Kaboul",0,0],
@@ -80,8 +80,8 @@ def Start(zone):
                 "Israël":["Jérusalem",0,0],
                 "Japon":["Tokyo",1200,240],
                 "Jordanie":["Amman",0,0],
-                "Kazakhstan":["Astana"],
-                "Kirghizistan":["Bichkek"],
+                "Kazakhstan":["Astana",0,0],
+                "Kirghizistan":["Bichkek",0,0],
                 "Koweït":["Koweït",0,0],
                 "Laos":["Vietnane",0,0],
                 "Liban":["Beyrouth",0,0],
@@ -91,8 +91,8 @@ def Start(zone):
                 "Népal":["Katmandou",0,0],
                 "Oman":["Mascate",0,0],
                 "Ouzbékistan":["Tachkent",0,0],
-                "Pakistan":["Islamabad"],
-                "Philippines":["Manille"],
+                "Pakistan":["Islamabad",0,0],
+                "Philippines":["Manille",0,0],
                 "Qatar":["Doha",0,0],
                 "Russie":["Moscou",0,0],
                 "Singapour":["Singapour",0,0],
@@ -172,7 +172,7 @@ def load_map(zone):
     screen_y = 690
     zones = {
         "Europe":[1.3,1500,210], #Carte.jpg: [3.4,540,60]
-        "Asie":[0.8,2400,200],
+        "Asie":[0.7,2100,300],
         "Afrique":[0.6,850,650]
     }
     zoom = zones[zone][0]
