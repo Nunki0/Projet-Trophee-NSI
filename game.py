@@ -5,11 +5,16 @@ import Point
 
 def Start(zone):
     """initialisation de la fenêtre"""
-    global sprites, locations, player
+    global sprites, locations, player, couleurs
     load_map(zone)
     sprites = pygame.sprite.Group()
     player = player.Explorer(0,0)
     sprites.add(player)
+    couleurs = {
+        "noir":(0,0,0),
+        "vert":(0,255,255),
+        "rouge":(255,255,0)
+    }
     locations = {
         "Europe": {
                 "Albanie":["Tirana",772,524], 
@@ -205,7 +210,12 @@ def mark_zone(zone):
             for k in locations[i]:
                 npoint = Point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
                 sprites.add(npoint)
-                
+
+def text_display():
+    font1 = pygame.font.SysFont(None, 72)
+    img1 = font1.render('test', True, couleurs["noir"])
+    screen.blit(img1,(150,150))
+
 def run():
     """boucle du jeu"""
     clock =pygame.time.Clock()
@@ -219,6 +229,7 @@ def run():
                 print(pygame.mouse.get_pos())        # affiche les coordonnées du pointeur de souris pour avoir plus facilement les coordonnées des capitales à entrer dans le dict
         inputs()
         sprites.draw(screen)
+        text_display()
         pygame.display.flip()
         clock.tick(50)
     pygame.quit()
