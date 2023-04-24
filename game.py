@@ -12,8 +12,8 @@ def Start(zone):
     sprites.add(player)
     couleurs = {
         "noir":(0,0,0),
-        "vert":(0,255,255),
-        "rouge":(255,255,0)
+        "vert":(0,255,0),
+        "rouge":(255,0,0)
     }
     locations = {
         "Europe": {
@@ -213,7 +213,7 @@ def mark_zone(zone):
 
 def text_display():
     font1 = pygame.font.SysFont(None, 72)
-    img1 = font1.render('test', True, couleurs["noir"])
+    img1 = font1.render('test', True, couleurs["rouge"])
     screen.blit(img1,(150,150))
 
 def run():
