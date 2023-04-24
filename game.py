@@ -58,121 +58,121 @@ def Start(zone):
                 "Ukraine":["Kiev",926,336]
         },
         "Asie": {
-                "Afghanistan":["Kaboul",0,0],
-                "Arabie saoudite":["Riyad",0,0],
-                "Arménie":["Erevan",0,0],
-                "Azerbaïdjan":["Bakou",0,0],
-                "Bahreïn":["Manama",0,0],
-                "Bangladesh":["Dacca",0,0],
-                "Bhoutan":["Timphou",0,0],
-                "Birmanie":["Naypyidaw",0,0],
-                "Brunei":["Bandar Seri Begawan",0,0],
-                "Cambodge":["Phnom Penh",0,0],
-                "Chine":["Pékin",0,0],
-                "Corée du Nord":["Pyongyang",0,0],
-                "Corée du Sud":["Séoul",0,0],
-                "Émirats arabes unis":["Abu Dabi",0,0],
-                "Géorgie":["Tbilissi",0,0],
-                "Inde":["New Dehli",0,0],
+                "Afghanistan":["Kaboul",440,190],
+                "Arabie saoudite":["Riyad",237,300],
+                "Arménie":["Erevan",215,137],
+                "Azerbaïdjan":["Bakou",259,138],
+                "Bahreïn":["Manama",282,290],
+                "Bangladesh":["Dacca",658,315],
+                "Bhoutan":["Timphou",650,279],
+                "Myanmar":["Naypyidaw",724,350],
+                "Brunei":["Bandar Seri Begawan",914,528],
+                "Cambodge":["Phnom Penh",812,447],
+                "Chine":["Pékin",850,145],
+                "Corée du Nord":["Pyongyang",938,153],
+                "Corée du Sud":["Séoul",961,168],
+                "Émirats arabes unis":["Abu Dabi",329,312],
+                "Géorgie":["Tbilissi",203,120],
+                "Inde":["New Dehli",524,270],
                 "Indonésie":["Jakarta",0,0],
                 "Irak":["Bagdad",0,0],
                 "Iran":["Téhéran",0,0],
                 "Israël":["Jérusalem",0,0],
-                "Japon":["Tokyo",1200,240],
-                "Jordanie":["Amman",0,0],
-                "Kazakhstan":["Astana",0,0],
-                "Kirghizistan":["Bichkek",0,0],
-                "Koweït":["Koweït",0,0],
-                "Laos":["Vietnane",0,0],
-                "Liban":["Beyrouth",0,0],
-                "Malaisie":["Kuala Lumpur",0,0],
-                "Maldives":["Malé",0,0],
-                "Mongolie":["Oulan-Bator",0,0],
-                "Népal":["Katmandou",0,0],
-                "Oman":["Mascate",0,0],
-                "Ouzbékistan":["Tachkent",0,0],
-                "Pakistan":["Islamabad",0,0],
-                "Philippines":["Manille",0,0],
-                "Qatar":["Doha",0,0],
-                "Russie":["Moscou",0,0],
-                "Singapour":["Singapour",0,0],
-                "Sri Lanka":["Sri Jayawardenapura Kotte",0,0],
-                "Syrie":["Damas",0,0],
-                "Tadjikistan":["Douchanbé",0,0],
-                "Taïwan":["Taipei",0,0],
-                "Thaïlande":["Bangkok",0,0],
-                "Timor oriental":["Dili",0,0],
-                "Turkménistan":["Achgabat",0,0],
-                "Turquie":["Ankara",0,0],
-                "Viêt Nam":["Hanoï",0,0],
-                "Yémen":["Sanaa",0,0]
+                "Japon":["Tokyo",1076,192],
+                "Jordanie":["Amman",152,234],
+                "Kazakhstan":["Astana",404,25],
+                "Kirghizistan":["Bichkek",479,116],
+                "Koweït":["Koweït",255,256],
+                "Laos":["Vietnane",787,377],
+                "Liban":["Beyrouth",142,206],
+                "Malaisie":["Kuala Lumpur",790,544],
+                "Maldives":["Malé",508,513],
+                "Mongolie":["Oulan-Bator",724,46],
+                "Népal":["Katmandou",599,271],
+                "Oman":["Mascate",366,326],
+                "Ouzbékistan":["Tachkent",436,129],
+                "Pakistan":["Islamabad",478,202],
+                "Philippines":["Manille",967,420],
+                "Qatar":["Doha",294,302],
+                "Singapour":["Singapour",815,564],
+                "Sri Lanka":["Sri Jayawardenapura Kotte",581,501],
+                "Syrie":["Damas",154,204],
+                "Tadjikistan":["Douchanbé",439,157],
+                "Taïwan":["Taipei",951,305],
+                "Thaïlande":["Bangkok",770,426],
+                "Timor oriental":["Dili",1023,672],
+                "Turkménistan":["Achgabat",329,155],
+                "Turquie":["Ankara",110,141],
+                "Viêt Nam":["Hanoï",810,343],
+                "Yémen":["Sanaa",238,410]
         },
         "Afrique": {
-                "Afrique du Sud":["Pretoria",0,0],
-                "Algérie":["Alger",0,0],
-                "Angola":["Luanda",0,0],
-                "Bénin":["Porto-Novo",0,0],
-                "Botswana":["Gaborone",0,0],
-                "Burkina Faso":["Ouagadougou",0,0],
-                "Burundi":["Gitega",0,0],
-                "Cameroun":["Yaoundé",0,0],
-                "Cap-Vert":["Praia",0,0],
-                "République Centrafricaine":["Bangui",0,0],
-                "Comores":["Moroni",0,0],
-                "République du Congo":["Brazzaville"],
-                "République Démocratique du Congo":["Kinshasa",0,0],
-                "Côte d'Ivoire":["Yamoussoukro",0,0],
-                "Djibouti":["Djibouti",0,0],
-                "Égypte":["Le Caire",0,0],
-                "Érythrée":["Asmara",0,0], 
-                "Eswatini":["M'Babane",0,0],
-                "Éthiopie":["Addis Abeba",0,0],
-                "Gabon":["Libreville",0,0], 
-                "Gambie":["Banjul",0,0],
-                "Ghana":["Accra",0,0], 
-                "Guinée":["Conakry",0,0],
-                "Guinée-Bissau":["Bissau",0,0], 
-                "Guinée Equatoriale":["Malabo",0,0], 
-                "Kenya":["Nairobi",0,0], 
-                "Lesotho":["Maseru",0,0], 
-                "Liberia":["Monrovia",0,0], 
-                "Libye":["Tunis",0,0], 
-                "Madagascar":["Tanarive",0,0],
-                "Malawi":["Lilongwe",0,0],
-                "Mali":["Bamako",0,0], 
-                "Maroc":["Rabat",0,0],
-                "Maurice":["Port-Louis",0,0], 
-                "Mauritanie":["Nouakchott",0,0], 
-                "Mozambique":["Maputo",0,0], 
-                "Namibie":["Windhoek",0,0], 
-                "Niger":["Niamey",0,0], 
-                "Nigeria":["Abuja",0,0], 
-                "Ouganda":["Kampala",0,0], 
-                "Rwanda":["Kigali",0,0], 
-                "São Tomé-et-Principe":["São Tomé",0,0],
-                "Sénégal":["Dakar",0,0],
-                "Seychelles":["Victoria",0,0], 
-                "Sierra Leone":["Freetown",0,0], 
-                "Somalie":["Mogadisco",0,0], 
-                "Soudan":["Khartoum",0,0], 
-                "Soudan du Sud":["Djouba",0,0],
-                "Tanzanie":["Dodoma",0,0],
-                "Tchad":["N'Djamena",750,340],
-                "Togo":["Lomé",0,0], 
-                "Tunisie":["Tunis",0,0], 
-                "Zambie":["Lusaka",0,0], 
-                "Zimbabwe":["Harare",0,0]        
+                "Afrique du Sud":["Pretoria",824,601],
+                "Algérie":["Alger",615,23],
+                "Angola":["Luanda",700,446],
+                "Bénin":["Porto-Novo",609,301],
+                "Botswana":["Gaborone",797,587],
+                "Burkina Faso":["Ouagadougou",574,246],
+                "Burundi":["Gitega",834,398],
+                "Cameroun":["Yaoundé",689,321],
+                "Cap-Vert":["Praia",397,220],
+                "République Centrafricaine":["Bangui",742,312],
+                "Comores":["Moroni",950,475],
+                "République du Congo":["Brazzaville",712,395],
+                "République Démocratique du Congo":["Kinshasa",714,414],
+                "Côte d'Ivoire":["Yamoussoukro",545,299],
+                "Djibouti":["Djibouti",938,253],
+                "Égypte":["Le Caire",833,88],
+                "Érythrée":["Asmara",904,217], 
+                "Eswatini":["M'Babane",844,608],
+                "Éthiopie":["Addis Abeba",906,278],
+                "Gabon":["Libreville",670,362], 
+                "Gambie":["Banjul",458,237],
+                "Ghana":["Accra",588,307], 
+                "Guinée":["Conakry",475,264],
+                "Guinée-Bissau":["Bissau",465,251], 
+                "Guinée Equatoriale":["Malabo",661,333], 
+                "Kenya":["Nairobi",897,370], 
+                "Lesotho":["Maseru",816,639], 
+                "Liberia":["Monrovia",505,303], 
+                "Libye":["Tripoli",701,59], 
+                "Madagascar":["Tanarive",978,524],
+                "Malawi":["Lilongwe",870,492],
+                "Mali":["Bamako",532,243], 
+                "Maroc":["Rabat",538,50],
+                "Maurice":["Port-Louis",1056,553], 
+                "Mauritanie":["Nouakchott",463,187], 
+                "Mozambique":["Maputo",854,602], 
+                "Namibie":["Windhoek",731,564], 
+                "Niger":["Niamey",614,233], 
+                "Nigeria":["Abuja",650,276], 
+                "Ouganda":["Kampala",857,350], 
+                "Rwanda":["Kigali",836,379], 
+                "São Tomé-et-Principe":["São Tomé",643,362],
+                "Sénégal":["Dakar",452,223],
+                "Seychelles":["Victoria",1046,407], 
+                "Sierra Leone":["Freetown",482,284], 
+                "Somalie":["Mogadisco",950,350], 
+                "Soudan":["Khartoum",865,211], 
+                "Soudan du Sud":["Djouba",849,313],
+                "Tanzanie":["Dodoma",881,422],
+                "Tchad":["N'Djamena",714,251],
+                "Togo":["Lomé",599,302], 
+                "Tunisie":["Tunis",676,19], 
+                "Zambie":["Lusaka",822,494], 
+                "Zimbabwe":["Harare",840,535]        
         }
     }
     mark_zone(zone)
 
 def load_map(zone):
+    """charge la carte de jeu, ajustée sur la zone choisie"""
     global screen
     screen_x = 1360
     screen_y = 690
     zones = {
-        "Europe":[1.3,1500,210], #Carte.jpg: [3.4,540,60]
-        "Asie":[0.7,2100,300],
+        "Europe":[1.3,1500,210], 
+        "Asie":[0.7,2100,430],
         "Afrique":[0.6,850,650]
     }
     zoom = zones[zone][0]
@@ -198,22 +198,6 @@ def inputs():
     if pressed[pygame.K_DOWN]:
         player.move_down()
 
-
-def mark_country(country):
-    """affiche un point sur le pays indiqué"""
-    for i in locations:
-        for k in locations[i]:
-            if country == k:
-                npoint = Point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
-                sprites.add(npoint)
-
-def mark_all():
-    """affiche tous les pays"""
-    for i in locations:
-        for k in locations[i]:
-            npoint = Point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
-            sprites.add(npoint)
-
 def mark_zone(zone):
     """affiche tous les pays d'une zone géographique"""
     for i in locations:
@@ -236,6 +220,5 @@ def run():
         inputs()
         sprites.draw(screen)
         pygame.display.flip()
-
         clock.tick(50)
     pygame.quit()
