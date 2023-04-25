@@ -1,11 +1,12 @@
 import pygame
 import player
 import Point
+from random import *
 
-
-def Start(zone):
+def Start(zone_choisie):
     """initialisation de la fenêtre"""
-    global sprites, locations, player, couleurs
+    global sprites, locations, player, couleurs, zone
+    zone = zone_choisie
     load_map(zone)
     sprites = pygame.sprite.Group()
     player = player.Explorer(0,0)
@@ -175,19 +176,19 @@ def load_map(zone):
     global screen
     screen_x = 1360
     screen_y = 690
-    zones = {
+    réglages_zones = {
         "Europe":[1.3,1500,210], 
         "Asie":[0.7,2100,430],
         "Afrique":[0.6,850,650]
     }
-    zoom = zones[zone][0]
+    zoom = réglages_zones[zone][0]
     surf_x = round(screen_x/zoom)
     surf_y = round(screen_y/zoom)
     screen = pygame.display.set_mode((screen_x,screen_y))
     pygame.display.set_caption("Explore")
     background = pygame.image.load("Carte1.png")
     surf = pygame.Surface([surf_x,surf_y])
-    surf.blit(background,(0,0),(zones[zone][1],zones[zone][2],surf_x,surf_y))
+    surf.blit(background,(0,0),(réglages_zones[zone][1],réglages_zones[zone][2],surf_x,surf_y))
     surf2=pygame.transform.scale_by(surf,zoom)
     screen.blit(surf2, (0,0))
 
@@ -211,10 +212,14 @@ def mark_zone(zone):
                 npoint = Point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
                 sprites.add(npoint)
 
-def text_display():
+def text_display(text, color):
+    """affiche le texte en paramètre dans la couleur spécifiée si elle existe dans la liste (noir, rouge ou vert)"""
     font1 = pygame.font.SysFont(None, 72)
-    img1 = font1.render('test', True, couleurs["rouge"])
+    img1 = font1.render(text, True, couleurs[color])
     screen.blit(img1,(150,150))
+
+def choose_element():
+    text_display(locations[zone])
 
 def run():
     """boucle du jeu"""
@@ -225,11 +230,11 @@ def run():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            if event.type == pygame.MOUSEBUTTONDOWN: # lorsque l'on clique
-                print(pygame.mouse.get_pos())        # affiche les coordonnées du pointeur de souris pour avoir plus facilement les coordonnées des capitales à entrer dans le dict
+            #if event.type == pygame.MOUSEBUTTONDOWN: # lorsque l'on clique
+             #   print(pygame.mouse.get_pos())        # affiche les coordonnées du pointeur de souris pour avoir plus facilement les coordonnées des capitales à entrer dans le dict
         inputs()
         sprites.draw(screen)
-        text_display()
-        pygame.display.flip()
+        text_display("test", "rouge")
+        pygame.display.update()
         clock.tick(50)
     pygame.quit()
