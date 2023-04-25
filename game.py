@@ -1,6 +1,6 @@
 import pygame
 import player
-import Point
+import point
 from random import *
 
 def Start(zone_choisie):
@@ -9,7 +9,7 @@ def Start(zone_choisie):
     zone = zone_choisie
     load_map(zone)
     sprites = pygame.sprite.Group()
-    player = player.Explorer(0,0)
+    player = player.Explorer(500,500)
     sprites.add(player)
     couleurs = {
         "noir":(0,0,0),
@@ -173,10 +173,10 @@ def Start(zone_choisie):
 
 def load_map(zone):
     """charge la carte de jeu, ajustée sur la zone choisie"""
-    global screen
+    global screen, surf2
     screen_x = 1360
     screen_y = 690
-    réglages_zones = {
+    réglages_zones = { #dict contenant les régages pour chaque zone de jeu: le zoom nécessaire et la position dans la carte
         "Europe":[1.3,1500,210], 
         "Asie":[0.7,2100,430],
         "Afrique":[0.6,850,650]
@@ -187,9 +187,9 @@ def load_map(zone):
     screen = pygame.display.set_mode((screen_x,screen_y))
     pygame.display.set_caption("Explore")
     background = pygame.image.load("Carte1.png")
-    surf = pygame.Surface([surf_x,surf_y])
-    surf.blit(background,(0,0),(réglages_zones[zone][1],réglages_zones[zone][2],surf_x,surf_y))
-    surf2=pygame.transform.scale_by(surf,zoom)
+    surf = pygame.Surface([surf_x,surf_y]) #crée une petite surface 
+    surf.blit(background,(0,0),(réglages_zones[zone][1],réglages_zones[zone][2],surf_x,surf_y)) #imprime sur cette surface la zone de la carte spécifiée dans le dict selon les choix de l'utilisateur
+    surf2=pygame.transform.scale_by(surf,zoom) #crée une nouvelle surface en grossisant la première à la taille de l'écran
     screen.blit(surf2, (0,0))
 
 def inputs():
@@ -203,23 +203,25 @@ def inputs():
         player.move_up()
     if pressed[pygame.K_DOWN]:
         player.move_down()
+    if pressed[pygame.K_SPACE]:
+        choose_element()
 
 def mark_zone(zone):
     """affiche tous les pays d'une zone géographique"""
     for i in locations:
         if i == zone:
             for k in locations[i]:
-                npoint = Point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
+                npoint = point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
                 sprites.add(npoint)
 
-def text_display(text, color):
+def text_display(text, color="noir"):
     """affiche le texte en paramètre dans la couleur spécifiée si elle existe dans la liste (noir, rouge ou vert)"""
     font1 = pygame.font.SysFont(None, 72)
     img1 = font1.render(text, True, couleurs[color])
     screen.blit(img1,(150,150))
 
 def choose_element():
-    text_display(locations[zone])
+    text_display(str(len(locations[zone])))
 
 def run():
     """boucle du jeu"""
@@ -233,8 +235,8 @@ def run():
             #if event.type == pygame.MOUSEBUTTONDOWN: # lorsque l'on clique
              #   print(pygame.mouse.get_pos())        # affiche les coordonnées du pointeur de souris pour avoir plus facilement les coordonnées des capitales à entrer dans le dict
         inputs()
+        sprites.clear(screen,surf2)
         sprites.draw(screen)
-        text_display("test", "rouge")
-        pygame.display.update()
+        pygame.display.flip()
         clock.tick(50)
     pygame.quit()

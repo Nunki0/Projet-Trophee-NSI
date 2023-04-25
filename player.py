@@ -12,13 +12,10 @@ class Explorer(sprite.Sprites):
         self.speed = 4
         self.animation_images = {
             'down':self.get_image(0,0),
-            'right1':self.get_image(0,68),
-            'left2':self.get_image(0,172),
-            'left':self.get_image(0,279),
-            'right2':self.get_image(0,364),
+            'right':self.get_image(0,68),
+            'left':self.get_image(0,137),
             'up': self.get_image(0,420),
-            'basic':self.get_image(0,0),
-              }
+            }
 
     def get_image(self, x=0, y=0):
         """renvoie l'image du sprite"""
@@ -29,14 +26,13 @@ class Explorer(sprite.Sprites):
     def goto(self,x,y):
         self.rect.center = [x,y]
 
-
     def move_right(self):
         self.goto(self.rect.centerx+self.speed, self.rect.centery)
-        self.image=self.animation_images['right1']
+        self.image=self.animation_images["right"]
         
     def move_left(self):
         self.goto(self.rect.centerx-self.speed, self.rect.centery)
-        self.image = self.animation_images['left']
+        self.image = self.animation_images["left"]
 
     def move_up(self):
         self.goto(self.rect.centerx, self.rect.centery-self.speed)

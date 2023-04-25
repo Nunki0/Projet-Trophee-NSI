@@ -26,6 +26,7 @@ def Réglages():
     liste_modes.current(0)
     liste_modes.grid(column=3, row=2, sticky=E)
 
+    fenetre.bind("<Return>", fenetre.quit)
 
     fenetre.mainloop()
     return liste_zones.get()

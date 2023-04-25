@@ -5,7 +5,7 @@ from game import *
 def global_init():
     pygame.init()
     pygame.font.init()
-    Start("Asie") #initialisation fenêtre #interface.Réglages()
+    Start(interface.Réglages()) #initialisation fenêtre #interface.Réglages()
 
 global_init()
 run() #boucle de jeu
