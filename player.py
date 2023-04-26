@@ -42,6 +42,8 @@ class Explorer(sprite.Sprites):
         self.goto(self.rect.centerx, self.rect.centery+self.speed)
         self.image = self.animation_images['down']
 
+    def colision(self, list):
+        return self.rect.collidelist(list)
     
         
 

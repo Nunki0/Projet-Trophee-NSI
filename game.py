@@ -1,21 +1,25 @@
 import pygame
 import player
 import point
-from random import *
+import random
 
-def Start(zone_choisie):
+def Start(réglages):
     """initialisation de la fenêtre"""
-    global sprites, locations, player, couleurs, zone
-    zone = zone_choisie
+    global sprites, locations, player, couleurs, zone, font_rect, elements, current_element, point_rect_list
+    mode = réglages[1]
+    zone = réglages[0]
+    font_rect = 0
     load_map(zone)
     sprites = pygame.sprite.Group()
     player = player.Explorer(500,500)
     sprites.add(player)
+    point_rect_list = []
     couleurs = {
         "noir":(0,0,0),
         "vert":(0,255,0),
         "rouge":(255,0,0)
     }
+
     locations = {
         "Europe": {
                 "Albanie":["Tirana",772,524], 
@@ -170,6 +174,12 @@ def Start(zone_choisie):
         }
     }
     mark_zone(zone)
+    if mode == "Pays":
+        elements = list(locations[zone].keys())
+    else:
+        elements = [locations[zone][i][0] for i in locations[zone]] #récupère toutes les capitales (1er élément de chacune des liste)
+    random.shuffle(elements)
+    current_element = 0
 
 def load_map(zone):
     """charge la carte de jeu, ajustée sur la zone choisie"""
@@ -203,8 +213,6 @@ def inputs():
         player.move_up()
     if pressed[pygame.K_DOWN]:
         player.move_down()
-    if pressed[pygame.K_SPACE]:
-        choose_element()
 
 def mark_zone(zone):
     """affiche tous les pays d'une zone géographique"""
@@ -212,16 +220,15 @@ def mark_zone(zone):
         if i == zone:
             for k in locations[i]:
                 npoint = point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
+                point_rect_list.append(npoint.return_rect())
                 sprites.add(npoint)
-
-def text_display(text, color="noir"):
+    print(point_rect_list)
+def text_display(text, color="noir", pos = (0,0)):
     """affiche le texte en paramètre dans la couleur spécifiée si elle existe dans la liste (noir, rouge ou vert)"""
+    screen.blit(surf2,(0,0))
     font1 = pygame.font.SysFont(None, 72)
     img1 = font1.render(text, True, couleurs[color])
-    screen.blit(img1,(150,150))
-
-def choose_element():
-    text_display(str(len(locations[zone])))
+    screen.blit(img1,pos)
 
 def run():
     """boucle du jeu"""
@@ -232,9 +239,11 @@ def run():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            #if event.type == pygame.MOUSEBUTTONDOWN: # lorsque l'on clique
-             #   print(pygame.mouse.get_pos())        # affiche les coordonnées du pointeur de souris pour avoir plus facilement les coordonnées des capitales à entrer dans le dict
         inputs()
+        if player.colision(point_rect_list) != -1:
+            text_display("Collision")
+        else:
+            text_display(elements[current_element])
         sprites.clear(screen,surf2)
         sprites.draw(screen)
         pygame.display.flip()

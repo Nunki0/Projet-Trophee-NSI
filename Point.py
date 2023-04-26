@@ -13,3 +13,6 @@ class Point(sprite.Sprites):
         image = self.create_image(0,0,25,20,self.sprite_sheet)
         image.set_colorkey([255,255,255])
         return image
+
+    def return_rect(self):
+        return self.rect

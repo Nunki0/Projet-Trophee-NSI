@@ -5,12 +5,10 @@ from tkinter import ttk
 def Réglages():
     zones = ["Afrique","Asie","Europe"]
     modes = ["Pays","Capitales"]
-    
-    global fenetre
+
     fenetre = Tk()
     fenetre.title("Réglages")
     
-
     mainframe = ttk.Frame(fenetre, padding="3 3 12 12")     #initialisation
     mainframe.grid(column=0, row=0, sticky=(N, W, E, S))    #de
     fenetre.columnconfigure(0, weight=1)                    #la
@@ -26,7 +24,7 @@ def Réglages():
     liste_modes.current(0)
     liste_modes.grid(column=3, row=2, sticky=E)
 
-    fenetre.bind("<Return>", fenetre.quit)
+    fenetre.bind("<Return>", lambda e: fenetre.quit()) #syntaxe particulière, mais utilise directement fenetre.quit posait des problèmes de positional arguments
 
     fenetre.mainloop()
-    return liste_zones.get()
+    return liste_zones.get(), liste_modes.get()
