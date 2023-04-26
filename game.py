@@ -5,10 +5,9 @@ import random
 
 def Start(réglages):
     """initialisation de la fenêtre"""
-    global sprites, locations, player, couleurs, zone, font_rect, elements, current_element, point_rect_list
+    global sprites, locations, player, couleurs, zone, values, elements, current_element, point_rect_list
     mode = réglages[1]
     zone = réglages[0]
-    font_rect = 0
     load_map(zone)
     sprites = pygame.sprite.Group()
     player = player.Explorer(500,500)
@@ -24,6 +23,7 @@ def Start(réglages):
         "Europe": {
                 "Albanie":["Tirana",772,524], 
                 "Allemagne":["Berlin",670,313],
+                "Andorre":["Andorre-la-Vieille",473,498],
                 "Autriche":["Vienne",708,384],
                 "Belgique":["Bruxelles",530,334],
                 "Biélorussie":["Minsk",882,287],
@@ -175,9 +175,10 @@ def Start(réglages):
     }
     mark_zone(zone)
     if mode == "Pays":
-        elements = list(locations[zone].keys())
+        values = list(locations[zone].keys())
     else:
-        elements = [locations[zone][i][0] for i in locations[zone]] #récupère toutes les capitales (1er élément de chacune des liste)
+        values = [locations[zone][i][0] for i in locations[zone]] #récupère toutes les capitales (1er élément de chacune des liste)
+    elements = values[:]
     random.shuffle(elements)
     current_element = 0
 
@@ -241,9 +242,7 @@ def run():
                 running = False
         inputs()
         if player.colision(point_rect_list) != -1:
-            text_display("Collision")
-        else:
-            text_display(elements[current_element])
+            text_display(values[player.colision(point_rect_list)])
         sprites.clear(screen,surf2)
         sprites.draw(screen)
         pygame.display.flip()
