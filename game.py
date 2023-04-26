@@ -180,7 +180,7 @@ def Start(réglages):
         values = [locations[zone][i][0] for i in locations[zone]] #récupère toutes les capitales (1er élément de chacune des liste)
     elements = values[:]
     random.shuffle(elements)
-    current_element = 0
+    current_element = 1
 
 def load_map(zone):
     """charge la carte de jeu, ajustée sur la zone choisie"""
@@ -223,7 +223,7 @@ def mark_zone(zone):
                 npoint = point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
                 point_rect_list.append(npoint.return_rect())
                 sprites.add(npoint)
-    print(point_rect_list)
+    
 def text_display(text, color="noir", pos = (0,0)):
     """affiche le texte en paramètre dans la couleur spécifiée si elle existe dans la liste (noir, rouge ou vert)"""
     screen.blit(surf2,(0,0))
@@ -233,6 +233,7 @@ def text_display(text, color="noir", pos = (0,0)):
 
 def run():
     """boucle du jeu"""
+    global current_element
     clock =pygame.time.Clock()
     running =True 
 
@@ -241,8 +242,9 @@ def run():
             if event.type == pygame.QUIT:
                 running = False
         inputs()
-        if player.colision(point_rect_list) != -1:
-            text_display(values[player.colision(point_rect_list)])
+        if player.colision(point_rect_list) != -1 and values.index(elements[current_element]) in player.colision(point_rect_list) and current_element < len(locations[zone]):
+            current_element += 1
+        text_display(elements[current_element])
         sprites.clear(screen,surf2)
         sprites.draw(screen)
         pygame.display.flip()
