@@ -2,12 +2,12 @@ from tkinter import *
 from tkinter import ttk
 
 
-def Réglages():
+def Reglages():
     zones = ["Afrique","Asie","Europe"] #dans l'idéal il aurait fallu récupérer les clés du dict contenant toutes les zones, mais comme cette fonction ast applée avant la déclaration de ce dict, ce n'était pas pratique. il faudra envisager une nouvelle organisation pour une future version
     modes = ["Pays","Capitales"]
 
     fenetre = Tk()
-    fenetre.title("Réglages")
+    fenetre.title("Reglages")
     
     mainframe = ttk.Frame(fenetre, padding="3 3 12 12")     #initialisation
     mainframe.grid(column=0, row=0, sticky=(N, W, E, S))    #de
