@@ -4,7 +4,6 @@ from game import *
 
 def global_init():
     pygame.init()
-    pygame.font.init()
     Start(interface.Réglages()) #initialisation fenêtre #interface.Réglages()
 
 global_init()

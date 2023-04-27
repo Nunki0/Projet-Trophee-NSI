@@ -226,12 +226,26 @@ def mark_zone(zone):
                 point_rect_list.append(npoint.return_rect())
                 sprites.add(npoint)
     
-def text_display(text, color="noir", pos = (0,0)):
+def text_display(text, dest, color="noir", pos = (0,0), size = 72, center = False):
     """affiche le texte en paramètre dans la couleur spécifiée si elle existe dans la liste (noir, rouge ou vert)"""
-    screen.blit(surf2,(0,0))
-    font1 = pygame.font.SysFont(None, 72)
+    font1 = pygame.font.SysFont(None, size)
     img1 = font1.render(text, True, couleurs[color])
-    screen.blit(img1,pos)
+    if center:
+        dest.blit(img1, (pos[0]-img1.get_rect().width/2, pos[1]-img1.get_rect().height/2))
+    else:
+        dest.blit(img1,pos)
+
+def endscreen():
+    """affiche la fenêtre de fin"""
+    endsurf = pygame.Surface([500,300])
+    endsurf.fill((220,220,220))
+    text_display("Bravo!", endsurf, "vert", (250,150), 75, True)
+    screen.blit(endsurf, (1360/2-250,690/2-150))
+    pygame.display.flip()
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
 
 def run():
     """boucle du jeu"""
@@ -243,13 +257,17 @@ def run():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-        if event.type == pygame.MOUSEBUTTONDOWN: # lorsque l'on clique
-            print(pygame.mouse.get_pos())
         inputs()
+
         if values.index(elements[current_element]) in player.colision(point_rect_list) and current_element < len(locations[zone])-1: #si la liste des indices rects touchés contient l'indice du pays à trouver, 
             point_list[values.index(elements[current_element])].green() #affiche le point touché en vert
             current_element += 1 #on passe au pays suivant
-        text_display(elements[current_element]) 
+        
+        if current_element >= len(locations[zone])-1:
+            endscreen()
+
+        screen.blit(surf2,(0,0))
+        text_display(elements[current_element], screen) 
         sprites.clear(screen,surf2)
         sprites.draw(screen)
         pygame.display.flip()
