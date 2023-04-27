@@ -5,13 +5,14 @@ import random
 
 def Start(réglages):
     """initialisation de la fenêtre"""
-    global sprites, locations, player, couleurs, zone, values, elements, current_element, point_rect_list
+    global sprites, locations, player, couleurs, zone, values, elements, current_element, point_list, point_rect_list
     mode = réglages[1]
     zone = réglages[0]
     load_map(zone)
     sprites = pygame.sprite.Group()
     player = player.Explorer(500,500)
     sprites.add(player)
+    point_list = []
     point_rect_list = []
     couleurs = {
         "noir":(0,0,0),
@@ -84,10 +85,10 @@ def Start(réglages):
                 "Émirats arabes unis":["Abu Dabi",329,312],
                 "Géorgie":["Tbilissi",203,120],
                 "Inde":["New Dehli",524,270],
-                "Indonésie":["Jakarta",0,0],
-                "Irak":["Bagdad",0,0],
-                "Iran":["Téhéran",0,0],
-                "Israël":["Jérusalem",0,0],
+                "Indonésie":["Jakarta",833,647],
+                "Irak":["Bagdad",220,212],
+                "Iran":["Téhéran",280,188],
+                "Israël":["Jérusalem",137,228],
                 "Japon":["Tokyo",1076,192],
                 "Jordanie":["Amman",152,234],
                 "Kazakhstan":["Astana",404,25],
@@ -221,6 +222,7 @@ def mark_zone(zone):
         if i == zone:
             for k in locations[i]:
                 npoint = point.Point(locations[i][k][1],locations[i][k][2]) #crée un nouveau point aux coordonnées du pays, s'il existe dans la liste
+                point_list.append(npoint)
                 point_rect_list.append(npoint.return_rect())
                 sprites.add(npoint)
     
@@ -241,10 +243,13 @@ def run():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+        if event.type == pygame.MOUSEBUTTONDOWN: # lorsque l'on clique
+            print(pygame.mouse.get_pos())
         inputs()
-        if player.colision(point_rect_list) != -1 and values.index(elements[current_element]) in player.colision(point_rect_list) and current_element < len(locations[zone]):
-            current_element += 1
-        text_display(elements[current_element])
+        if values.index(elements[current_element]) in player.colision(point_rect_list) and current_element < len(locations[zone])-1: #si la liste des indices rects touchés contient l'indice du pays à trouver, 
+            point_list[values.index(elements[current_element])].green() #affiche le point touché en vert
+            current_element += 1 #on passe au pays suivant
+        text_display(elements[current_element]) 
         sprites.clear(screen,surf2)
         sprites.draw(screen)
         pygame.display.flip()

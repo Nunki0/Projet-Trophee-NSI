@@ -43,7 +43,7 @@ class Explorer(sprite.Sprites):
         self.image = self.animation_images['down']
 
     def colision(self, rect):
-        return self.rect.collidelistall(rect)
+        return self.rect.collidelistall(rect) #renvoie la liste des indices rectangles intersectant le rectangle du joueur
     
         
 
