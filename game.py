@@ -11,7 +11,6 @@ def Start(réglages):
     load_map(zone)
     sprites = pygame.sprite.Group() #groupe contenant tous les points ainsi que le joueur pour faciliter l'affichage
     player = player.Explorer(500,500)
-    sprites.add(player)
     point_list = []  #liste des instances de la classe point, utilisée pour cible le point à mettre en vert
     point_rect_list = [] #liste des rectangles correspondants à tous les points pour tester les collisions avec le rectangle du joueur
     couleurs = { #dict des couleurs prédéfinies pour l'affichage de texte à l'écran
@@ -175,6 +174,7 @@ def Start(réglages):
         }
     }
     mark_zone(zone)
+    sprites.add(player) #à laisser après mark_zone pour avoir le bon ordre des calques
     if mode == "Pays":
         values = list(locations[zone].keys())
     else:
