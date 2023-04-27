@@ -9,12 +9,12 @@ def Start(réglages):
     mode = réglages[1]
     zone = réglages[0]
     load_map(zone)
-    sprites = pygame.sprite.Group()
+    sprites = pygame.sprite.Group() #groupe contenant tous les points ainsi que le joueur pour faciliter l'affichage
     player = player.Explorer(500,500)
     sprites.add(player)
-    point_list = []
-    point_rect_list = []
-    couleurs = {
+    point_list = []  #liste des instances de la classe point, utilisée pour cible le point à mettre en vert
+    point_rect_list = [] #liste des rectangles correspondants à tous les points pour tester les collisions avec le rectangle du joueur
+    couleurs = { #dict des couleurs prédéfinies pour l'affichage de texte à l'écran
         "noir":(0,0,0),
         "vert":(0,255,0),
         "rouge":(255,0,0)
@@ -181,7 +181,7 @@ def Start(réglages):
         values = [locations[zone][i][0] for i in locations[zone]] #récupère toutes les capitales (1er élément de chacune des liste)
     elements = values[:]
     random.shuffle(elements)
-    current_element = 1
+    current_element = 0
 
 def load_map(zone):
     """charge la carte de jeu, ajustée sur la zone choisie"""
@@ -200,7 +200,7 @@ def load_map(zone):
     pygame.display.set_caption("Explore")
     background = pygame.image.load("Carte1.png")
     surf = pygame.Surface([surf_x,surf_y]) #crée une petite surface 
-    surf.blit(background,(0,0),(réglages_zones[zone][1],réglages_zones[zone][2],surf_x,surf_y)) #imprime sur cette surface la zone de la carte spécifiée dans le dict selon les choix de l'utilisateur
+    surf.blit(background,(0,0),(réglages_zones[zone][1],réglages_zones[zone][2],surf_x,surf_y)) #imprime sur cette surface la zone de la carte spécifiée dans le dict selon le choix de zone de l'utilisateur
     surf2=pygame.transform.scale_by(surf,zoom) #crée une nouvelle surface en grossisant la première à la taille de l'écran
     screen.blit(surf2, (0,0))
 
@@ -227,7 +227,7 @@ def mark_zone(zone):
                 sprites.add(npoint)
     
 def text_display(text, dest, color="noir", pos = (0,0), size = 72, center = False):
-    """affiche le texte en paramètre dans la couleur spécifiée si elle existe dans la liste (noir, rouge ou vert)"""
+    """affiche le texte en paramètre avec les réglages suivants: surface sur laquelle écrire, position, taille de police, centrage au millieu de la surface"""
     font1 = pygame.font.SysFont(None, size)
     img1 = font1.render(text, True, couleurs[color])
     if center:
@@ -237,14 +237,14 @@ def text_display(text, dest, color="noir", pos = (0,0), size = 72, center = Fals
 
 def endscreen():
     """affiche la fenêtre de fin"""
-    endsurf = pygame.Surface([500,300])
-    endsurf.fill((220,220,220))
-    text_display("Bravo!", endsurf, "vert", (250,150), 75, True)
-    screen.blit(endsurf, (1360/2-250,690/2-150))
+    endsurf = pygame.Surface([500,300]) #création d'une nouvelle surface
+    endsurf.fill((220,220,220))         #grise
+    text_display("Bravo!", endsurf, "vert", (250,150), 75, True) #impression du texte
+    screen.blit(endsurf, (1360/2-250,690/2-150)) #centrage de la surface par rapport à l'écran
     pygame.display.flip()
     while True:
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == pygame.QUIT: #test pour fermer la fenêtre de jeu
                 pygame.quit()
 
 def run():
@@ -255,7 +255,7 @@ def run():
 
     while running:
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == pygame.QUIT: #test pour fermer la fenêtre de jeu
                 running = False
         inputs()
 
@@ -263,13 +263,12 @@ def run():
             point_list[values.index(elements[current_element])].green() #affiche le point touché en vert
             current_element += 1 #on passe au pays suivant
         
-        if current_element >= len(locations[zone])-1:
-            endscreen()
+        if current_element >= len(locations[zone])-1: #si le dernier pays a été trouvé
+            endscreen() #affichage de l'écran de fin
 
-        screen.blit(surf2,(0,0))
-        text_display(elements[current_element], screen) 
-        sprites.clear(screen,surf2)
-        sprites.draw(screen)
-        pygame.display.flip()
+        screen.blit(surf2,(0,0)) #réinitialisation de l'écran
+        text_display(elements[current_element], screen) #affichage du pays à trouver
+        sprites.draw(screen) #affichage des sprites
+        pygame.display.flip() #mise à jour de l'écran
         clock.tick(50)
     pygame.quit()
