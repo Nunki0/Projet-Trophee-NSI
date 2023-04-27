@@ -242,10 +242,11 @@ def endscreen():
     text_display("Bravo!", endsurf, "vert", (250,150), 75, True) #impression du texte
     screen.blit(endsurf, (1360/2-250,690/2-150)) #centrage de la surface par rapport à l'écran
     pygame.display.flip()
-    while True:
+    quit = 0
+    while not quit:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: #test pour fermer la fenêtre de jeu
-                pygame.quit()
+                quit = 1
 
 def run():
     """boucle du jeu"""
@@ -259,12 +260,14 @@ def run():
                 running = False
         inputs()
 
-        if values.index(elements[current_element]) in player.colision(point_rect_list) and current_element < len(locations[zone])-1: #si la liste des indices rects touchés contient l'indice du pays à trouver, 
+        if values.index(elements[current_element]) in player.colision(point_rect_list): #si la liste des indices rects touchés contient l'indice du pays à trouver, 
             point_list[values.index(elements[current_element])].green() #affiche le point touché en vert
-            current_element += 1 #on passe au pays suivant
-        
-        if current_element >= len(locations[zone])-1: #si le dernier pays a été trouvé
-            endscreen() #affichage de l'écran de fin
+            if current_element < len(locations[zone]): #si ce n'est pas le dernier pays
+                current_element += 1 #on passe au pays suivant
+
+            if current_element >= len(locations[zone]): #si le dernier pays a été trouvé
+                endscreen() #affichage de l'écran de fin
+                running = False
 
         screen.blit(surf2,(0,0)) #réinitialisation de l'écran
         text_display(elements[current_element], screen) #affichage du pays à trouver
